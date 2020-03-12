@@ -24,7 +24,7 @@ public class Lotto extends Ticket{
     public boolean setBonusBall(int bonusBall){
          if(utilities.NumberInRange(bonusBall,1,49) &&
              (utilities.NumberNotDuplicate(bonusBall, _ball))){
-                 _bonusBall = bonusBall;;
+                 _bonusBall = bonusBall;
                 return true;
             }
         return false;
@@ -40,5 +40,22 @@ public class Lotto extends Ticket{
     
     public String getRetailer(){
         return _retailer;
+    }
+    
+    @Override
+    public String toString(){
+        String ballNos="";
+        for( int i: _ball){
+            ballNos = ballNos + String.valueOf(i) + " ";
+            
+        }
+        return String.format("Lotto Ticket for %1s " +
+                             "Ticket is bought at %2s " +
+                             "Ball numbers are %3s " +
+                             "Bonus ball is %4s", 
+                             _customer.getName(),
+                             _retailer,
+                             ballNos,
+                             _bonusBall); 
     }
 }

@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author t.bain
  */
-public class Ticket {
+public abstract class Ticket {
     
     protected Customer _customer;
     protected int _ball[] = new int[6];
@@ -19,17 +19,11 @@ public class Ticket {
 
     public Ticket(){
         _customer = new Customer();
-        Random rand = new Random();
-        for(int i=0;i<6;i++){
-           _ball[i] = rand.nextInt(49) + 1 ;
-        }
+        _ball = utilities.generateRandomBalls(49, _ball);
     }
-    public Ticket(Customer cust, int Bonus, int[] balls){
+    public Ticket(Customer cust, int[] balls){
         this._customer = cust;
-        Random rand = new Random();
-        for(int i=0;i<6;i++){
-           _ball[i] = rand.nextInt(49) + 1 ;
-        }
+        this._ball = balls;
     }
     
     public void setCustomer(Customer  cust){
@@ -40,29 +34,18 @@ public class Ticket {
     }
     
     public boolean setBall(int i, int chosenNumber){
-	    boolean acceptable=true;
-		if(chosenNumber >=1 && chosenNumber <=49){
-			for(int j= 0;j<i;j++){
-				if (chosenNumber == _ball[j]){
-					acceptable = false;
-				}
-			}	
-			if(acceptable){
-				_ball[i] = chosenNumber;
-			}
-		}
-		else{
-			acceptable = false;
-		}	
-		return acceptable;
+	    
+        if(utilities.NumberInRange(chosenNumber,1,49) &&
+             (utilities.NumberNotDuplicate(chosenNumber, _ball))){
+                 _ball[i] = chosenNumber;
+                return true;
+            }
+        return false;
+
 	}	
+
+    @Override
+    public abstract String toString();   // overrides the standard toString() method
+             
   
-    public void displayTicket(){
-        System.out.println("Ticket for " + _customer.getName());
-        for(int i=0;i<6;i++){
-           System.out.println("Balls " + _ball[i]);
-        } 
-    }
-
-
 }
