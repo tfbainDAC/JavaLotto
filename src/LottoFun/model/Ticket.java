@@ -13,45 +13,42 @@ import java.util.Random;
  */
 public class Ticket {
     
-    private Customer customer;
-    private int bonusBall;
-    private int ball[] = new int[6];
+    protected Customer _customer;
+    protected int _ball[] = new int[6];
     
 
     public Ticket(){
-        customer = new Customer();
+        _customer = new Customer();
         Random rand = new Random();
-        bonusBall = rand.nextInt(49) + 1;
         for(int i=0;i<6;i++){
-           ball[i] = rand.nextInt(49) + 1 ;
+           _ball[i] = rand.nextInt(49) + 1 ;
         }
     }
     public Ticket(Customer cust, int Bonus, int[] balls){
-        this.customer = cust;
+        this._customer = cust;
         Random rand = new Random();
-        bonusBall = rand.nextInt(49) + 1;
         for(int i=0;i<6;i++){
-           ball[i] = rand.nextInt(49) + 1 ;
+           _ball[i] = rand.nextInt(49) + 1 ;
         }
     }
     
     public void setCustomer(Customer  cust){
-        customer = cust;
+        _customer = cust;
     }
     public Customer getCustomer(){
-        return customer;
+        return _customer;
     }
     
     public boolean setBall(int i, int chosenNumber){
 	    boolean acceptable=true;
 		if(chosenNumber >=1 && chosenNumber <=49){
 			for(int j= 0;j<i;j++){
-				if (chosenNumber == ball[j]){
+				if (chosenNumber == _ball[j]){
 					acceptable = false;
 				}
 			}	
 			if(acceptable){
-				ball[i] = chosenNumber;
+				_ball[i] = chosenNumber;
 			}
 		}
 		else{
@@ -59,16 +56,12 @@ public class Ticket {
 		}	
 		return acceptable;
 	}	
-    public void setBonus(int chosenNumber){
-	    bonusBall = chosenNumber;
-	}
   
     public void displayTicket(){
-        System.out.println("Ticket for " + customer.getName());
+        System.out.println("Ticket for " + _customer.getName());
         for(int i=0;i<6;i++){
-           System.out.println("Balls " + ball[i]);
+           System.out.println("Balls " + _ball[i]);
         } 
-        System.out.println("Bonus " + bonusBall);
     }
 
 
