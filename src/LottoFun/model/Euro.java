@@ -26,7 +26,9 @@ public class Euro extends Ticket {
         
     }	
 
-   
+    public int[] getLuckyStar(){
+        return luckyStar;
+    }
     
     
     

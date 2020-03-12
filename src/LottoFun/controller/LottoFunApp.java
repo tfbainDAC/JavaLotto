@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package LottoFun.controller;
+import LottoFun.model.utilities;
 import LottoFun.view.MainMenuView;
 import LottoFun.view.Header;
 /**
@@ -24,7 +25,9 @@ public class LottoFunApp {
     {
        int choice;
        boolean quit = false;
-
+       System.out.println("hello");
+       int[] arr = new int[6];
+       arr = utilities.generateRandomBalls(49, arr);
        while(!quit)
        {
            header.displayHeader("Main Menu");

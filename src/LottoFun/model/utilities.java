@@ -5,6 +5,8 @@
  */
 package LottoFun.model;
 
+import java.util.Random;
+
 /**
  *
  * @author t.bain
@@ -30,13 +32,24 @@ public class utilities {
         boolean notDuplicate = true;
         
         if (arr != null){
-            for(int j= 0;j<arr.length;j++){   
-                if (chosenNumber == arr[j]){
+            for(int i : arr){   
+                if (chosenNumber == i){
                     notDuplicate =  false;
 		}
             }
         } 
-        
         return notDuplicate;
     }    
+    
+    public static int[] generateRandomBalls(int to, int[] arr){
+        Random rand = new Random();
+        int randNo;
+        for(int i =0;i<arr.length;i++){
+           do{ 
+               randNo = rand.nextInt(to) + 1 ;
+           }while(!NumberNotDuplicate(randNo, arr));
+           arr[i] = randNo;
+        }
+        return arr;
+    }
 }
