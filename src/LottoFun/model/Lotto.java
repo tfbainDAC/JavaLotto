@@ -5,6 +5,8 @@
  */
 package LottoFun.model;
 
+import java.util.Random;
+
 /**
  *
  * @author t.bain
@@ -14,8 +16,18 @@ public class Lotto extends Ticket{
     private int _bonusBall;
     private String _retailer;
     
-    public void setBonusBall(int bonusBall){
-        _bonusBall = bonusBall;
+    public Lotto(){
+       Random rand = new Random();
+        _bonusBall = rand.nextInt(49) + 1;
+    }
+    
+    public boolean setBonusBall(int bonusBall){
+         if(utilities.NumberInRange(bonusBall,1,49) &&
+             (utilities.NumberNotDuplicate(bonusBall, _ball))){
+                 _bonusBall = bonusBall;;
+                return true;
+            }
+        return false;
     }
     
     public int getBonusBall(){
