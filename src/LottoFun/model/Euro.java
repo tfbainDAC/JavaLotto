@@ -36,7 +36,16 @@ public class Euro extends Ticket {
         return _luckyStar;
     }
     
-        @Override
+    public void setCountry(String country){
+        _country = country;
+    }
+    
+    public String getCountry(){
+        return _country;
+    }
+            
+    
+    @Override
     public String toString(){
         String ballNos="", lucky = "";
         for( int i: _ball){
