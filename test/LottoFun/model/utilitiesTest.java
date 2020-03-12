@@ -63,4 +63,31 @@ public class utilitiesTest {
         boolean result = utilities.NumberNotDuplicate(3, arr);
         assertEquals(true, result);
     }
+    
+    @Test
+    public void testGenerateRandomBalls_Range() {
+        System.out.println("Generate Random Balls, Range verification");
+        int[] arr = new int[6];
+        arr = utilities.generateRandomBalls(47, arr);
+        
+        for (int i: arr){
+            assertTrue(i>=1 && i<= 47);
+        }
+    }
+    
+    @Test
+    public void testGenerateRandomBalls_Length(){
+        System.out.println("Generate Random Balls, Length of array");
+        int[] arr = new int[2];
+        arr = utilities.generateRandomBalls(30, arr);
+        assertEquals(2, arr.length);
+    }
+    
+    @Test
+    public void testGenerateRandomBalls_Unique() {
+        //System.out.println("Generate Random Balls, unique verification");
+        //int[] arr = new int[6];
+        //arr = utilities.generateRandomBalls(49, arr);
+        //  ?  to add test
+    }
 }
