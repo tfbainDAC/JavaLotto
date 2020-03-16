@@ -97,14 +97,41 @@ public class LottoFunApp {
     
     public void createLotto()
     {
-        Ticket LottoT ;
-        
-        LottoT = lottoInput.lottoInputDetails();
-        
-        ticketList.add(LottoT);
+           int choice = 0; 
+           boolean quit = false;
+           
+           while(!quit)
+           {   
+           header.displayHeader("Lotto Ticket ");
+           choice = lottoInput.displayLottoChoices(currentCustomer);
+       
+            switch(choice)
+            {
+                case 1:
+                    generateLotto();
+                    quit = true;
+                    break;
+                 case 2:
+                    lottoInput.lottoInputNumbers();
+                    quit = true;
+                    break;    
+                  default:
+                    System.out.println("Please choose a valid option");           
+            }
+           }
+ 
     }
     
-    
+    public void generateLotto(){
+        Lotto LottoT ;
+        String retailer;
+        
+        LottoT = new Lotto();  // creates new lottery ticket with random numbers
+        retailer = lottoInput.inputRetailer();
+        LottoT.setRetailer(retailer);
+        System.out.println(LottoT.toString());
+        ticketList.add(LottoT);
+    }
     
     
     public static void main(String[] args) 

@@ -15,7 +15,7 @@ public class LottoInputDialogue {
         
     }
     
-    public Ticket lottoInputDetails(){
+    public Ticket lottoInputNumbers(){
         Ticket lottoT;
         lottoT = new Lotto();
         
@@ -31,12 +31,19 @@ public class LottoInputDialogue {
         System.out.println("Customer: " + cust.toString());
         System.out.println("1. Generate Numbers");
         System.out.println("2. Enter Numbers");
-        System.out.println("3. Quit ");
         System.out.println("");
         System.out.println("Please enter your choice: ");
         
         menuChoice = s.nextInt();
         
         return menuChoice;
+    }
+    
+    public String inputRetailer(){
+          Scanner sL = new Scanner(System.in);
+          String retailer;
+          System.out.println("Please add retailer >> ");
+          retailer = sL.nextLine();
+          return retailer;
     }
 }

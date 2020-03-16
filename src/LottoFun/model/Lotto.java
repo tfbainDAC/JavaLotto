@@ -17,8 +17,11 @@ public class Lotto extends Ticket{
     private String _retailer;
     
     public Lotto(){
-       Random rand = new Random();
-        _bonusBall = rand.nextInt(49) + 1;
+        super();
+        Random rand = new Random();
+        _bonusBall = rand.nextInt(49) + 1;   // refactor to add to utilities
+        _retailer = "";
+
     }
     
     public boolean setBonusBall(int bonusBall){
