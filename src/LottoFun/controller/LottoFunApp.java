@@ -18,17 +18,19 @@ public class LottoFunApp {
     private final Header header;
 
     private LottoInputDialogue lottoInput;
+    private CustomerInputDialogue customerInput;
     //private StudentView studentView;
     
     //Data Model
-    private final ArrayList<Ticket> ticketList;
-    
+    private ArrayList<Ticket> ticketList;
+    private Customer currentCustomer;
     
     public LottoFunApp()
     {
         mainMenu = new MainMenuView();
         ticketMenu = new TicketMenuView();
         lottoInput = new LottoInputDialogue();
+        customerInput = new CustomerInputDialogue();
         header = new Header();
         ticketList = new ArrayList();
     }
@@ -60,7 +62,7 @@ public class LottoFunApp {
     }
     public void createTickets()
     {
-        CustomerInputDialogue();   /*******/
+        currentCustomer = customerInput.inputCustomerDetails();  // object *********  
         runTicketMenu();
        
     }
@@ -71,8 +73,8 @@ public class LottoFunApp {
 
        while(!quit)
        {
-           header.displayHeader("Ticket Menu");
-           choice = ticketMenu.displayTicketMenu();
+           header.displayHeader("Ticket Menu for Customer ");
+           choice = ticketMenu.displayTicketMenu(currentCustomer);
         
             switch(choice)
             {

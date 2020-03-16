@@ -5,6 +5,7 @@
  */
 package LottoFun.view;
 import LottoFun.model.*;
+import java.util.Scanner;
 /**
  *
  * @author t.bain
@@ -19,5 +20,23 @@ public class LottoInputDialogue {
         lottoT = new Lotto();
         
         return lottoT;
+    }
+    
+    public int displayLottoChoices(Customer cust)
+    {
+        Scanner s = new Scanner(System.in);
+        int menuChoice = 0;
+        
+        System.out.println("Lottery Ticket purchase");
+        System.out.println("Customer: " + cust.toString());
+        System.out.println("1. Generate Numbers");
+        System.out.println("2. Enter Numbers");
+        System.out.println("3. Quit ");
+        System.out.println("");
+        System.out.println("Please enter your choice: ");
+        
+        menuChoice = s.nextInt();
+        
+        return menuChoice;
     }
 }

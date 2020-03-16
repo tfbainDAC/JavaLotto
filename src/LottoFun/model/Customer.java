@@ -18,7 +18,7 @@ public class Customer {
         this._email = "";
     }
     
-    public Customer(String name, String email, String phone){
+    public Customer(String name, String email){
         this._name = name;
         this._email = email;
     }
