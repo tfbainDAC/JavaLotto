@@ -5,8 +5,6 @@
  */
 package LottoFun.model;
 
-import java.util.Random;
-
 /**
  *
  * @author t.bain

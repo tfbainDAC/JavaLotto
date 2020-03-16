@@ -15,12 +15,12 @@ public class LottoInputDialogue {
         
     }
     
-    public Ticket lottoInputNumbers(){
+    /*public Ticket lottoInputNumbers(){
         Ticket lottoT;
         lottoT = new Lotto();
         
         return lottoT;
-    }
+    }*/
     
     public int displayLottoChoices(Customer cust)
     {

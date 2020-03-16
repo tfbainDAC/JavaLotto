@@ -112,7 +112,7 @@ public class LottoFunApp {
                     quit = true;
                     break;
                  case 2:
-                    lottoInput.lottoInputNumbers();
+                    //lottoInput.lottoInputNumbers();
                     quit = true;
                     break;    
                   default:
