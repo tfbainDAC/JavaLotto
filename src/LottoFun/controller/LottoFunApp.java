@@ -63,7 +63,9 @@ public class LottoFunApp {
     public void createTickets()
     {
         currentCustomer = customerInput.inputCustomerDetails();  // object *********  
-        runTicketMenu();
+        if(!currentCustomer.getName().equalsIgnoreCase("Quit")){
+            runTicketMenu();
+        }
        
     }
     public void runTicketMenu()
@@ -124,11 +126,8 @@ public class LottoFunApp {
     
     public void generateLotto(){
         Lotto LottoT ;
-        String retailer;
         
-        LottoT = new Lotto();  // creates new lottery ticket with random numbers
-        retailer = lottoInput.inputRetailer();
-        LottoT.setRetailer(retailer);
+        LottoT = new Lotto(currentCustomer);  // creates new lottery ticket with random numbers
         System.out.println(LottoT.toString());
         ticketList.add(LottoT);
     }
