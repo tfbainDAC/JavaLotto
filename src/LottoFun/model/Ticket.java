@@ -5,71 +5,45 @@
  */
 package LottoFun.model;
 
-import java.util.Random;
-
 /**
  *
  * @author t.bain
  */
-public class Ticket {
+public abstract class Ticket {
     
-    private Customer customer;
-    private int bonusBall;
-    private int ball[] = new int[6];
+    protected Customer _customer;
+    protected int _ball[] = new int[6];
     
 
     public Ticket(){
-        customer = new Customer();
-        Random rand = new Random();
-        bonusBall = rand.nextInt(49) + 1;
-        for(int i=0;i<6;i++){
-           ball[i] = rand.nextInt(49) + 1 ;
-        }
+        _customer = new Customer();
+        _ball = utilities.generateRandomBalls(49, _ball);
     }
-    public Ticket(Customer cust, int Bonus, int[] balls){
-        this.customer = cust;
-        Random rand = new Random();
-        bonusBall = rand.nextInt(49) + 1;
-        for(int i=0;i<6;i++){
-           ball[i] = rand.nextInt(49) + 1 ;
-        }
+    public Ticket(Customer cust, int[] balls){
+        this._customer = cust;
+        this._ball = balls;
     }
     
     public void setCustomer(Customer  cust){
-        customer = cust;
+        _customer = cust;
     }
     public Customer getCustomer(){
-        return customer;
+        return _customer;
     }
     
     public boolean setBall(int i, int chosenNumber){
-	    boolean acceptable=true;
-		if(chosenNumber >=1 && chosenNumber <=49){
-			for(int j= 0;j<i;j++){
-				if (chosenNumber == ball[j]){
-					acceptable = false;
-				}
-			}	
-			if(acceptable){
-				ball[i] = chosenNumber;
-			}
-		}
-		else{
-			acceptable = false;
-		}	
-		return acceptable;
+	    
+        if(utilities.NumberInRange(chosenNumber,1,49) &&
+             (utilities.NumberNotDuplicate(chosenNumber, _ball))){
+                 _ball[i] = chosenNumber;
+                return true;
+            }
+        return false;
+
 	}	
-    public void setBonus(int chosenNumber){
-	    bonusBall = chosenNumber;
-	}
+
+    @Override
+    public abstract String toString();   // overrides the standard toString() method
+             
   
-    public void displayTicket(){
-        System.out.println("Ticket for " + customer.getName());
-        for(int i=0;i<6;i++){
-           System.out.println("Balls " + ball[i]);
-        } 
-        System.out.println("Bonus " + bonusBall);
-    }
-
-
 }

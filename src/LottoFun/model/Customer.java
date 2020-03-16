@@ -11,19 +11,16 @@ package LottoFun.model;
  */
 public class Customer {
     private String _name;
-    private String _phone;
     private String _email;
     
     public Customer(){
         this._name = "";
         this._email = "";
-        this._phone = "";
     }
     
-    public Customer(String name, String email, String phone){
+    public Customer(String name, String email){
         this._name = name;
         this._email = email;
-        this._phone = phone;
     }
     
     public void setName(String name){
@@ -36,7 +33,7 @@ public class Customer {
     
     @Override
     public String toString() {   // overrides the standard toString() method
-            return String.format("Customer " + _name + ", " + _email + ", " + _phone ); 
+            return String.format("Customer " + _name + ", " + _email  ); 
     }  
     
 }

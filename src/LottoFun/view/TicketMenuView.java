@@ -5,25 +5,27 @@
  */
 package LottoFun.view;
 import java.util.Scanner;
+import LottoFun.model.*;
 /**
  *
  * @author t.bain
  */
-public class MainMenuView {
-    public MainMenuView()
+public class TicketMenuView {
+    public TicketMenuView()
     {
         
     }
     
-    public int displayMainMenu()
+    public int displayTicketMenu(Customer cust)
     {
         Scanner s = new Scanner(System.in);
         int menuChoice = 0;
         
-        System.out.println("Main Menu");
+        System.out.println("Ticket Menu for Customer :"+ cust.toString());
         System.out.println("");
-        System.out.println("1. New Customer");
-        System.out.println("2. Quit");
+        System.out.println("1. Lotto");
+        System.out.println("2. Euro");
+        System.out.println("3. Quit");
         System.out.println("");
         System.out.println("Please enter your choice: ");
         
@@ -31,4 +33,6 @@ public class MainMenuView {
         
         return menuChoice;
     }
+    
+   
 }
