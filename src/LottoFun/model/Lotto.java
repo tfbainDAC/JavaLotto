@@ -20,7 +20,15 @@ public class Lotto extends Ticket{
         super();
         Random rand = new Random();
         _bonusBall = rand.nextInt(49) + 1;   // refactor to add to utilities
-        _retailer = "";
+        _retailer = "Tesco";
+
+    }
+    
+    public Lotto(Customer cust){
+        super(cust);
+        Random rand = new Random();
+        _bonusBall = rand.nextInt(49) + 1;   // refactor to add to utilities
+        _retailer = "Tesco";
 
     }
     

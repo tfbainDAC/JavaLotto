@@ -19,6 +19,12 @@ public abstract class Ticket {
         _customer = new Customer();
         _ball = utilities.generateRandomBalls(49, _ball);
     }
+    
+    public Ticket(Customer cust){
+        _customer = new Customer();
+        _ball = utilities.generateRandomBalls(49, _ball);
+    }
+    
     public Ticket(Customer cust, int[] balls){
         this._customer = cust;
         this._ball = balls;

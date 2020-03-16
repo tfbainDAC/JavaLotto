@@ -20,6 +20,12 @@ public class Euro extends Ticket {
          _country = "";
     }
     
+    public Euro(Customer cust){
+        super(cust);
+         _luckyStar = utilities.generateRandomBalls(49, _luckyStar);
+         _country = "";
+    }
+    
     public boolean setluckyStar(int i, int chosenNumber){  
 
         if(utilities.NumberInRange(chosenNumber,1,49) &&
