@@ -15,12 +15,22 @@ public class LottoInputDialogue {
         
     }
     
-    /*public Ticket lottoInputNumbers(){
-        Ticket lottoT;
-        lottoT = new Lotto();
-        
+    public Ticket lottoInputNumbers(Ticket lottoT){
+        int no;
+        boolean good;
+        Scanner s = new Scanner(System.in);
+
+        //  if taking input here use set methods to change data
+        for(int i=0;i<6;i++){
+           good = false; 
+           while(!good){ 
+            System.out.print("enter number " + (i+1));
+            no = s.nextInt();
+            good =lottoT.setBall(i,no);
+           }
+        }
         return lottoT;
-    }*/
+    }
     
     public int displayLottoChoices(Customer cust)
     {
@@ -37,6 +47,17 @@ public class LottoInputDialogue {
         menuChoice = s.nextInt();
         
         return menuChoice;
+    }
+    
+    public boolean confirmPurchase(){
+        Scanner scan = new Scanner(System.in);
+        boolean confirm=false;
+        char purchase;
+        System.out.println("Do you want to purchase this ticket (y/n) >>");
+        purchase = scan.next().charAt(0);
+        if(purchase =='y' || purchase == 'Y')
+            confirm = true;
+        return confirm;
     }
     
     public String inputRetailer(){

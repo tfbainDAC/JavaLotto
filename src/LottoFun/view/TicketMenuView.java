@@ -21,8 +21,7 @@ public class TicketMenuView {
         Scanner s = new Scanner(System.in);
         int menuChoice = 0;
         
-        System.out.println("Ticket Menu for Customer :"+ cust.toString());
-        System.out.println("");
+        System.out.println("Customer :"+ cust.toString()+"\n");
         System.out.println("1. Lotto");
         System.out.println("2. Euro");
         System.out.println("3. Quit");

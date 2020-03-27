@@ -33,7 +33,7 @@ public class Customer {
     
     @Override
     public String toString() {   // overrides the standard toString() method
-            return String.format("Customer " + _name + ", " + _email  ); 
+            return String.format(_name + ", " + _email  ); 
     }  
     
 }
