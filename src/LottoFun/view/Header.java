@@ -17,6 +17,7 @@ public class Header {
     
     public void displayHeader(String screenName)
     {
-        System.out.println("\n\n\nLotto Fun \t" + screenName + "\n");
+        System.out.println("\n\n***********  Lotto Fun  ***********\n" + 
+                           "             "+ screenName + "\n");
     }
 }

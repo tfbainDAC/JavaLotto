@@ -15,18 +15,21 @@ public class LottoInputDialogue {
         
     }
     
-    public Ticket lottoInputNumbers(Ticket lottoT){
+    public Lotto lottoInputNumbers(Lotto lottoT){
         int no;
         boolean good;
         Scanner s = new Scanner(System.in);
 
-        //  if taking input here use set methods to change data
+        //  taking input here use set methods to change data
         for(int i=0;i<6;i++){
            good = false; 
            while(!good){ 
-            System.out.print("enter number " + (i+1));
+            System.out.print("enter number " + (i+1) + " >> ");
             no = s.nextInt();
             good =lottoT.setBall(i,no);
+            if(!good){
+                System.out.println("number must be between 1 and 49 and must not be duplicated.");
+            }
            }
         }
         return lottoT;

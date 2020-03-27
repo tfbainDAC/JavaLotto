@@ -75,8 +75,8 @@ public class LottoFunApp {
 
        while(!quit)
        {
-           header.displayHeader("Ticket Menu for Customer ");
-           choice = ticketMenu.displayTicketMenu(currentCustomer);
+           header.displayHeader("Customer Ticket Menu");
+           choice = ticketMenu.displayTicketMenu(currentCustomer, ticketList);
         
             switch(choice)
             {
@@ -125,18 +125,16 @@ public class LottoFunApp {
     }
     
     public void generateLotto(){
-        Ticket LottoT ;
-      
+        Lotto LottoT ;
         LottoT = new Lotto(currentCustomer);  // creates new lottery ticket with random numbers
         System.out.println(LottoT.toString());
-    
         if(lottoInput.confirmPurchase()){
             ticketList.add(LottoT);
         }
     }
     public void inputLotto(){
-        Ticket LottoT ;
-        LottoT = new Lotto();  // creates new lottery ticket with random numbers
+        Lotto LottoT ;
+        LottoT = new Lotto(currentCustomer);  // creates new lottery ticket with random numbers
         LottoT =  lottoInput.lottoInputNumbers(LottoT);
         ticketList.add(LottoT);
     }

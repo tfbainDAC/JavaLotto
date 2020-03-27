@@ -21,7 +21,7 @@ public abstract class Ticket {
     }
     
     public Ticket(Customer cust){
-        _customer = new Customer();
+        _customer = cust;
         _ball = utilities.generateRandomBalls(49, _ball);
     }
     

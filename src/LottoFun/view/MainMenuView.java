@@ -19,9 +19,7 @@ public class MainMenuView {
     {
         Scanner s = new Scanner(System.in);
         int menuChoice = 0;
-        
-        System.out.println("Main Menu");
-        System.out.println("");
+
         System.out.println("1. New Customer");
         System.out.println("2. Quit");
         System.out.println("");
