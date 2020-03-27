@@ -34,7 +34,7 @@ public class TicketMenuView {
             System.out.println(t.toString());
          });
         }
-        System.out.println("\nPurchase Ticket ...");
+        System.out.println("\nPurchase Ticket or type 3 to quit ...");
         System.out.println("1. Lotto");
         System.out.println("2. Euro");
         System.out.println("3. Quit");
