@@ -19,6 +19,8 @@ public class TicketMenuView {
     
     public int displayTicketMenu(Customer cust, ArrayList<Ticket> ticketList)
     {
+        //  NOTE: THIS IS A PART WHICH WOULD BE AFFECTED WHEN ADDING THE CURRENT BASKET TO THE CUSTOMER OBJECT
+        //  THIS WOULD ONLY RECEIVE CUSTOMER AS AN ARGUMENT AND THEN WE WOULD code ticketlist = cust.getTicketList();
         Scanner s = new Scanner(System.in);
         int menuChoice = 0; 
         

@@ -12,6 +12,7 @@ package LottoFun.model;
 public abstract class Ticket {
     
     protected Customer _customer;
+    
     protected int _ball[] = new int[6];
     
 

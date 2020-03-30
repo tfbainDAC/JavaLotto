@@ -12,6 +12,7 @@ package LottoFun.model;
 public class Customer {
     private String _name;
     private String _email;
+    //  MAY PUT LIST OF BASKET TICKETS IN HERE
     
     public Customer(){
         this._name = "";
