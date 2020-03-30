@@ -12,6 +12,7 @@ package LottoFun.model;
 public abstract class Ticket {
     
     protected Customer _customer;
+    
     protected int _ball[] = new int[6];
     
 
@@ -21,7 +22,7 @@ public abstract class Ticket {
     }
     
     public Ticket(Customer cust){
-        _customer = new Customer();
+        _customer = cust;
         _ball = utilities.generateRandomBalls(49, _ball);
     }
     
